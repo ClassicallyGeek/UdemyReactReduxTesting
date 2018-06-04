@@ -21,7 +21,7 @@ describe('Comment Box Module Tests' , () => {
 
   it('should have a text area and a button', () => {
     expect(wrapped.find('textarea').length).toEqual(1);
-    expect(wrapped.find('button').length).toEqual(1);
+    expect(wrapped.find('button').length).toEqual(2);
   });
 
   describe('Text Area', () => {
