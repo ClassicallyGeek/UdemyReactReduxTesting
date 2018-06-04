@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from 'reducers';
 
-export default (props) => {
+// initialState - an optional starting State. Helpful for Testing.
+export default ({children, initialState = {}}) => {
   return (
-    <Provider store={ createStore(reducers, {}) } >
-      { props.children }
+    <Provider store={ createStore(reducers, initialState) } >
+      { children }
     </Provider>
   );
 }
