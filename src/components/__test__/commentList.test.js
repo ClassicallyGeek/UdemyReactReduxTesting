@@ -20,4 +20,9 @@ describe('Comment List Component', () => {
   it ('Shows one "li" element per comment', () => {
     expect(wrapped.find('li').length).toEqual(comments.length);
   });
+
+  it('should show the text for each comment', () => {
+    expect(wrapped.render().text()).toContain(comments[0]);
+    expect(wrapped.render().text()).toContain(comments[1]);
+  });
 });
