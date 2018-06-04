@@ -6,17 +6,19 @@ import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 
 describe('App Component Tests', () => {
-  it('should show the comment box', () => {
+  let wrapped;
+
+  beforeEach(() => {
     // Using Enzyme
-    const wrapped = shallow(<App />);
+    wrapped = shallow(<App />);
+  });
+
+  it('should show the comment box', () => {
     // Find returns an array
     expect(wrapped.find(CommentBox).length).toEqual(1);
   });
 
   it('should show the comment list', () => {
-    // Using Enzyme
-    const wrapped = shallow(<App />);
-    // Find returns an array
     expect(wrapped.find(CommentList).length).toEqual(1);
   });
 });
