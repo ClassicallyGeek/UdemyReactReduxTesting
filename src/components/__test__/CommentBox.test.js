@@ -35,4 +35,12 @@ describe('Comment Box Module Tests' , () => {
     wrapped.update();
     expect(wrapped.find('textarea').prop('value')).toEqual(newValue);
   });
+
+  it('should empty text area when form is submitted.', () => {
+    wrapped.setState({comment: 'bob'});
+    expect(wrapped.find('textarea').prop('value')).toEqual('bob');
+    wrapped.find('form').simulate('submit');
+    wrapped.update();
+    expect(wrapped.find('textarea').prop('value')).toEqual('');
+  });
 });
